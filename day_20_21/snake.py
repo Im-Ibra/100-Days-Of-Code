@@ -44,3 +44,11 @@ class Snake:
         part.penup()
         part.setpos(position)
         self.snake.append(part)
+
+    def reset(self):
+        for part in self.snake:
+            part.goto(2000, 2000)
+        self.snake.clear()
+        self.create_snake()
+        self.head = self.snake[0]
+

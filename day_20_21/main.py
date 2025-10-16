@@ -32,12 +32,12 @@ while game_on:
         snake.grow()
 
     if snake.head.xcor() > 480 or snake.head.xcor() < -480 or snake.head.ycor() > 480 or snake.head.ycor() < -480:
-        game_on = False
-        score.game_over()
+        score.reset()
+        snake.reset()
 
     for part in snake.snake[1:]:
         if snake.head.distance(part) < 10:
-            game_on = False
-            score.game_over()
+            score.reset()
+            snake.reset()
 
 screen.exitonclick()
